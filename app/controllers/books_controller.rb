@@ -43,10 +43,10 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-      flash[:notice] = 'successfully'
+      flash[:notice] = 'You have creatad book successfully.'
       redirect_to book_path(@book.id)
     else
-      flash[:notice] = 'error'
+      flash[:notice] = 'error prohibited this obj from being saved'
       render :edit
     end
   end
